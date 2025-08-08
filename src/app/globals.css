@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: black;
+  --background: rgb(0, 0, 35);
   --foreground: white;
+  --td1: rgb(30, 58, 138);
+  --td2-current: rgba(255, 0, 0, 0.278);
+  --td2-optimal: rgba(0, 255, 0, 0.2);
+  text-shadow: 0 0 0.5rem black;
 }
 
 body {
