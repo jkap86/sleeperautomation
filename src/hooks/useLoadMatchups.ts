@@ -100,7 +100,7 @@ export default function useLoadMatchups(week: string) {
           optimal_player_value: number;
           current_player_id: string;
           current_player_value: number;
-          kickoff: number;
+          inOrder: boolean;
         }[];
       } = {};
 
