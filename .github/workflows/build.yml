@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@latest
         with:
           name: macos-build
           path: dist/mac/*.app
