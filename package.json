@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "electron": "electron .",
-    "build:electron": "electron-builder",
+    "build:electron": "electron-builder --mac",
     "postinstall": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install chromium"
   },
   "dependencies": {
