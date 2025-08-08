@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build Electron App for macOS
-        run: npm run build
+        run: npm run build:electron
 
       - name: List contents of dist directory
         run: ls -R dist/
