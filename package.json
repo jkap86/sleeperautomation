@@ -1,0 +1,82 @@
+{
+  "name": "sleeper-automation",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "electron": "electron .",
+    "build:electron": "electron-builder",
+    "postinstall": "cross-env PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install chromium"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
+    "graphql": "^16.11.0",
+    "next": "^15.4.5",
+    "playwright-core": "^1.54.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-redux": "^9.2.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/electron": "^1.6.12",
+    "@types/node": "^20.19.9",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^9.2.0",
+    "cross-env": "^10.0.0",
+    "electron": "^37.2.6",
+    "electron-builder": "^26.0.12",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.5",
+    "playwright": "^1.54.2",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5.9.2"
+  },
+  "build": {
+    "appId": "sleeper-automation",
+    "asar": true,
+    "asarUnpack": [
+      "**/icudtl.dat",
+      "dist/**/*",
+      ".next/**/*",
+      "public/**/*",
+      "node_modules/**/*",
+      "src/tasks/**/*",
+      "src/data/**/*",
+      "package.json",
+      "node_modules/playwright-core/.local-browsers/**",
+      "node_modules/playwright/.local-browsers/**",
+      "node_modules/@playwright/**/.local-browsers/**"
+    ],
+    "files": [
+      ".env",
+      "main.js",
+      "package.json",
+      "dist/**/*",
+      ".next/**/*",
+      "public/**/*",
+      "node_modules/**/*",
+      "src/tasks/**/*",
+      "src/data/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "node_modules/electron/dist/icudtl.dat",
+        "to": "."
+      }
+    ],
+    "forceCodeSigning": false,
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
