@@ -311,25 +311,30 @@ export default function SetOptimalLineupsPage() {
                                                 "p-2 bg-[var(--td2-current)] shadow-[inset_0_0_2rem_black] text-center"
                                               }
                                             >
-                                              {new Date(
-                                                schedule.data[
-                                                  allplayers.data[
-                                                    o.current_player_id
-                                                  ].team
-                                                ].kickoff
-                                              ).toLocaleString("en-US", {
-                                                weekday: "short", // Sun
-                                                hour: "numeric", // 4
-                                                minute: "2-digit", // 00
-                                                hour12: true, // pm/am format
-                                              })}
+                                              {schedule.data[
+                                                allplayers.data[
+                                                  o.current_player_id
+                                                ]?.team
+                                              ]?.kickoff &&
+                                                new Date(
+                                                  schedule.data[
+                                                    allplayers.data[
+                                                      o.current_player_id
+                                                    ]?.team
+                                                  ]?.kickoff
+                                                )?.toLocaleString("en-US", {
+                                                  weekday: "short", // Sun
+                                                  hour: "numeric", // 4
+                                                  minute: "2-digit", // 00
+                                                  hour12: true, // pm/am format
+                                                })}
                                               <br />
                                               {
                                                 schedule.data[
                                                   allplayers.data[
                                                     o.current_player_id
-                                                  ].team
-                                                ].opp
+                                                  ]?.team
+                                                ]?.opp
                                               }
                                             </td>
                                             <td
@@ -337,7 +342,7 @@ export default function SetOptimalLineupsPage() {
                                                 "p-2 bg-[var(--td2-current)] shadow-[inset_0_0_2rem_black] text-center"
                                               }
                                             >
-                                              {o.current_player_value.toFixed(
+                                              {o.current_player_value?.toFixed(
                                                 1
                                               )}
                                             </td>
@@ -364,25 +369,30 @@ export default function SetOptimalLineupsPage() {
                                                 "p-2 bg-[var(--td2-optimal)] shadow-[inset_0_0_2rem_black] text-center"
                                               }
                                             >
-                                              {new Date(
-                                                schedule.data[
-                                                  allplayers.data[
-                                                    o.optimal_player_id
-                                                  ].team
-                                                ].kickoff
-                                              ).toLocaleString("en-US", {
-                                                weekday: "short", // Sun
-                                                hour: "numeric", // 4
-                                                minute: "2-digit", // 00
-                                                hour12: true, // pm/am format
-                                              })}
+                                              {schedule.data[
+                                                allplayers.data[
+                                                  o.optimal_player_id
+                                                ]?.team
+                                              ]?.kickoff &&
+                                                new Date(
+                                                  schedule.data[
+                                                    allplayers.data[
+                                                      o.optimal_player_id
+                                                    ]?.team
+                                                  ]?.kickoff
+                                                )?.toLocaleString("en-US", {
+                                                  weekday: "short", // Sun
+                                                  hour: "numeric", // 4
+                                                  minute: "2-digit", // 00
+                                                  hour12: true, // pm/am format
+                                                })}
                                               <br />
                                               {
                                                 schedule.data[
                                                   allplayers.data[
                                                     o.optimal_player_id
-                                                  ].team
-                                                ].opp
+                                                  ]?.team
+                                                ]?.opp
                                               }
                                             </td>
                                             <td
@@ -390,7 +400,7 @@ export default function SetOptimalLineupsPage() {
                                                 "p-2 bg-[var(--td2-optimal)] shadow-[inset_0_0_2rem_black] text-center"
                                               }
                                             >
-                                              {o.optimal_player_value.toFixed(
+                                              {o.optimal_player_value?.toFixed(
                                                 1
                                               )}
                                             </td>
